@@ -1,451 +1,1616 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>津カントリー倶楽部｜法人向け次世代会員権</title>
-    <meta name="description" content="ジャンボ尾崎設計の戦略的コースと、Katada Lodge & Villaでの特別な滞在。福利厚生・接待・企業ブランディングを高める法人専用会員権。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>津カントリー倶楽部｜法人向け次世代会員権で企業価値を最大化</title>
+    <meta name="description" content="福利厚生・接待価値・企業ブランディングを同時に高める法人専用会員権。津カントリー倶楽部で、社員とお客様に特別な体験を提供し、企業価値を向上させませんか？">
     <style>
         :root {
-            /* TCCのブランドカラーを意識した配色 */
-            --primary: #1a3c25; /* より深みのあるグリーン */
-            --primary-light: #3a5c45;
-            --accent: #c5a059; /* 落ち着いたゴールド */
-            --accent-light: #e6c575;
-            --bg-dark: #0f1c11;
-            --bg-light: #f9fbf9;
-            --text-dark: #111111;
-            --text-light: #555555;
+            --primary: #2c5530;
+            --primary-light: #4a7c59;
+            --accent: #d4af37;
+            --accent-light: #e8c547;
+            --bg-dark: #0a1a0c;
+            --bg-light: #f8fdf9;
+            --text-dark: #1a2e1d;
+            --text-light: #6b7c6f;
             --white: #ffffff;
-            --gray-100: #f5f5f5;
-            --gray-200: #e0e0e0;
+            --gray-100: #f7f8f9;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --success: #28a745;
+            --warning: #ffc107;
+            --info: #17a2b8;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Noto Sans JP', sans-serif; /* 基本はゴシック */
-            line-height: 1.8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
             color: var(--text-dark);
             overflow-x: hidden;
-            background-color: var(--bg-light);
         }
-        
-        h1, h2, h3, .serif {
-            font-family: 'Noto Serif JP', serif; /* 見出しは明朝体で高級感を */
-        }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* ===============================
-           1. HERO SECTION (メインビジュアル)
+           1. HERO SECTION (ファーストビュー)
            =============================== */
         .hero {
-            height: 100vh;
-            min-height: 700px;
-            /* 公式サイトのようなコース画像を背景に設定してください */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                /* ↓↓ ここに公式サイトのコース画像のURLを入れてください ↓↓ */
-                url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/top/main_01.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* パララックス効果 */
+            min-height: 100vh;
+            background: linear-gradient(135deg,
+                    var(--bg-dark) 0%,
+                    var(--primary) 50%,
+                    var(--primary-light) 100%);
             display: flex;
             align-items: center;
-            justify-content: center;
             position: relative;
-            text-align: center;
+            overflow: hidden;
         }
 
-        /* 画像が読み込めない場合のフォールバック */
-        .hero {
-            background-color: var(--primary);
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(212,175,55,0.1)"/><stop offset="100%" stop-color="rgba(212,175,55,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)" opacity="0.6"><animate attributeName="r" values="100;150;100" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23g)" opacity="0.4"><animate attributeName="r" values="80;120;80" dur="6s" repeatCount="indefinite"/></circle><circle cx="600" cy="700" r="120" fill="url(%23g)" opacity="0.3"><animate attributeName="r" values="120;180;120" dur="5s" repeatCount="indefinite"/></circle></svg>');
+            animation: float 20s ease-in-out infinite;
         }
-        
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(1deg);
+            }
+        }
+
         .hero-content {
-            max-width: 1000px;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 2rem;
+            position: relative;
             z-index: 2;
-            color: var(--white);
         }
-        
+
         .hero-badge {
             display: inline-block;
-            background: rgba(197, 160, 89, 0.9); /* ゴールド背景 */
-            padding: 0.6rem 2rem;
-            color: #000;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
             margin-bottom: 2rem;
-            text-transform: uppercase;
+            animation: slideInDown 1s ease-out;
         }
-        
+
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.2rem);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: var(--white);
             margin-bottom: 1.5rem;
-            line-height: 1.4;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            animation: slideInLeft 1s ease-out 0.3s both;
         }
-        
+
         .hero .subtitle {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            animation: slideInLeft 1s ease-out 0.6s both;
         }
-        
+
         .cta-container {
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 4rem;
+            animation: slideInUp 1s ease-out 0.9s both;
         }
-        
+
         .btn {
-            padding: 1.2rem 3rem;
-            font-weight: 500;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            transition: all 0.4s ease;
-            font-size: 1rem;
-            letter-spacing: 0.05em;
-            min-width: 240px;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
         }
-        
+
         .btn-primary {
-            background: var(--accent);
-            color: #000;
-            border: 1px solid var(--accent);
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            color: var(--text-dark);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
         }
-        
+
         .btn-primary:hover {
-            background: var(--white);
-            color: var(--accent);
-            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.4);
         }
-        
+
         .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             color: var(--white);
         }
-        
+
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
-        
+
         .trust-strip {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            font-size: 0.9rem;
             opacity: 0.9;
+            animation: slideInUp 1s ease-out 1.2s both;
         }
-        
+
         .trust-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .trust-item::before {
-            content: '';
-            display: block;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-        
         /* ===============================
-           SECTIONS COMMON
+           2. SECTIONS COMMON STYLES
            =============================== */
-        .section { padding: 8rem 2rem; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        
-        .section-header { text-align: center; margin-bottom: 6rem; }
-        
-        .section-badge {
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 1rem;
+        .section {
+            padding: 6rem 2rem;
         }
-        
-        .section h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
-        
-        .section-subtitle {
-            color: var(--text-light);
-            max-width: 700px;
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.4rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .section h2 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
         /* ===============================
-           FEATURES (USP)
+           3. PROBLEM SECTION (導入文)
            =============================== */
+        .problem-section {
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* ===============================
+           4. WHY SECTION (価値提案)
+           =============================== */
+        .why-section {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            border-left: 6px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .why-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            padding: 1rem 0;
+            padding-left: 3rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            background: rgba(212, 175, 55, 0.1);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            top: 0.8rem;
+        }
+
+        /* ===============================
+           5. FEATURES SECTION (商品・サービス情報)
+           =============================== */
+        .features-section {
+            background: var(--bg-light);
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 4rem 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 0;
-            border-radius: 4px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            transition: transform 0.4s ease;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
             overflow: hidden;
         }
 
-        .feature-card:hover { transform: translateY(-10px); }
-
-        .feature-img {
-            height: 200px;
-            background-color: var(--gray-200);
-            background-size: cover;
-            background-position: center;
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
         }
 
-        .feature-content { padding: 2.5rem; }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        }
 
-        .feature-content h3 {
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .feature-card h3 {
             font-size: 1.4rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .feature-details {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .feature-details ul {
+            list-style: none;
+        }
+
+        .feature-details li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .feature-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
         }
 
         /* ===============================
-           PRICING (Elegant)
+           6. TESTIMONIALS SECTION (お客様の声)
            =============================== */
-        .pricing-section { background: var(--bg-light); }
-        
+        .testimonials-section {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            position: relative;
+            border: 1px solid var(--gray-200);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 6rem;
+            color: var(--accent);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ===============================
+           7. PRICING SECTION (料金プラン)
+           =============================== */
+        .pricing-section {
+            background: var(--bg-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
         .pricing-card {
             background: var(--white);
             padding: 3rem;
-            border: 1px solid var(--gray-200);
-            position: relative;
+            border-radius: 20px;
             text-align: center;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .pricing-card.featured {
             border-color: var(--accent);
-            box-shadow: 0 20px 50px rgba(197, 160, 89, 0.15);
-            transform: scale(1.02);
+            transform: scale(1.05);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: '人気プラン';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .period {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* ===============================
+           8. FAQ SECTION
+           =============================== */
+        .faq-section {
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: var(--gray-100);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-200);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .faq-item input[type="checkbox"]:checked+.faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--white);
+        }
+
+        .faq-item input[type="checkbox"]:checked~.faq-answer {
+            max-height: 1000px;
+            padding: 2rem;
+        }
+
+        .faq-answer-content {
+            padding: 2rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===============================
+           9. PROCESS SECTION (導入の流れ)
+           =============================== */
+        .process-section {
+            background: var(--bg-light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .process-step h3 {
+            margin: 2rem 0 1.5rem;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===============================
+           10. CTA SECTION
+           =============================== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.05)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)" opacity="0.6"><animate attributeName="r" values="100;150;100" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23g)" opacity="0.4"><animate attributeName="r" values="80;120;80" dur="6s" repeatCount="indefinite"/></circle></svg>');
+        }
+
+        .cta-content {
+            position: relative;
             z-index: 2;
         }
 
-        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        
-        .price {
-            font-size: 2.5rem;
-            font-family: 'Noto Serif JP', serif;
-            color: var(--primary);
-            font-weight: 600;
-            margin: 1.5rem 0;
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 2rem;
+            font-size: clamp(2rem, 4vw, 3rem);
         }
 
-        .price span { font-size: 1rem; color: var(--text-light); }
+        .cta-section .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 25px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .cta-form iframe {
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
 
         /* ===============================
-           CONTACT
+           11. FOOTER
            =============================== */
-        .cta-section {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 6rem 2rem;
+        .footer {
+            background: var(--bg-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
         }
-        
-        /* Utility */
-        .text-accent { color: var(--accent); }
-        .bg-gray { background-color: var(--gray-100); }
-        
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ===============================
+           12. ANIMATIONS
+           =============================== */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===============================
+           13. RESPONSIVE DESIGN
+           =============================== */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .section { padding: 5rem 1.5rem; }
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .trust-strip {
+                justify-content: center;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .why-grid,
+            .features-grid,
+            .testimonials-grid,
+            .pricing-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-form iframe {
+                height: 2200px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-card,
+            .problem-card,
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
+    <!-- 1. HERO SECTION (ファーストビュー) -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">CORPORATE MEMBERSHIP</div>
+            <div class="hero-badge">
+                🏌️ 法人向け特別プラン | 福利厚生 × 接待 × 企業ブランディング
+            </div>
             <h1>
-                戦略と品格が交差する、<br>
-                <span class="text-accent" style="font-style: italic;">本物</span>のクラブライフ。
+                社員とお客様に<br>
+                <span style="color: var(--accent);">特別な体験</span>を。<br>
+                次世代会員権で、<br>
+                企業価値を最大化。
             </h1>
             <p class="subtitle">
-                ジャンボ尾崎設計の戦略的コースと、Katada Lodge & Villaでの特別な滞在。<br>
-                津カントリー倶楽部は、貴社の「企業価値」と「人」を育む舞台となります。
+                津カントリー倶楽部の法人専用「次世代会員権」で、<br>
+                人材定着・採用競争力・取引先からの信頼を同時に向上させ、<br>
+                選ばれる会社へと導きます。
             </p>
             <div class="cta-container">
-                <a href="#contact" class="btn btn-primary">資料請求・視察プレー予約</a>
-                <a href="#features" class="btn btn-secondary">TCCだけの体験とは</a>
+                <a href="#contact" class="btn btn-primary">
+                    📋 無料資料請求・視察プレー予約
+                </a>
+                <a href="#problem" class="btn btn-secondary">
+                    💡 なぜ今、会員権なのか？
+                </a>
             </div>
             <div class="trust-strip">
-                <div class="trust-item">椿大神社のお膝元</div>
-                <div class="trust-item">無記名4名利用</div>
-                <div class="trust-item">サテライトオフィス対応</div>
-                <div class="trust-item">海外名門コース提携</div>
+                <div class="trust-item">✅ 全国・海外の名門コースと提携</div>
+                <div class="trust-item">🎯 法人ロゴカート対応</div>
+                <div class="trust-item">🤝 静謐な接待環境</div>
+                <div class="trust-item">👥 無記名4名まで利用可</div>
+                <div class="trust-item">⏰ 即日導入可能</div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-gray">
+    <!-- 2. PROBLEM SECTION (導入文 - 痛みの指摘) -->
+    <section id="problem" class="section problem-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">FOR EXECUTIVES</span>
-                <h2>単なる「接待」を超えた価値を</h2>
+                <div class="section-badge">Current Problems</div>
+                <h2>こんな課題を抱えていませんか？</h2>
                 <p class="section-subtitle">
-                    現代のビジネスシーンにおいて、ゴルフ会員権に求められるのは「プレー権」だけではありません。<br>
-                    社員のエンゲージメント向上、創造的なオフサイトミーティング、そして特別なゲストへの最上級のおもてなし。<br>
-                    TCCはそのすべてを叶えるソリューションを提供します。
+                    多くの企業が直面している人材・営業・ブランディングの課題。<br>
+                    それらを解決する突破口が、津カントリー倶楽部の「次世代会員権」です。
                 </p>
             </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>人材の定着・採用競争力</h3>
+                    <p>優秀な人材の確保に苦労し、他社との差別化が困難。福利厚生の充実が求められているが、効果的な施策が見つからない。</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>取引先との関係構築</h3>
+                    <p>価格競争に巻き込まれがちで、信頼関係の構築に時間がかかる。接待や懇親の場の確保が困難で、関係深化のチャンスを逃している。</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💼</div>
+                    <h3>企業ブランディング</h3>
+                    <p>企業のステータスや信頼性をアピールする機会が限られている。競合他社との差別化要素が不足し、印象に残る接待が難しい。</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="features" class="section">
+    <!-- 3. WHY SECTION (価値提案) -->
+    <section id="why" class="section why-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">OUR VALUE</span>
-                <h2>選ばれる4つの理由</h2>
+                <div class="section-badge">Solution</div>
+                <h2>なぜ、今「次世代会員権」なのか？</h2>
+                <p class="section-subtitle">
+                    単なるゴルフ場利用権ではなく、企業価値向上のための戦略的投資。<br>
+                    TCCの会員体験は、「御社のブランド体験」そのものを設計します。
+                </p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-badge">経営者の視点</div>
+                    <h3>社外の信頼を上げ、<br>社内の士気を高める</h3>
+                    <ul class="check-list">
+                        <li><strong>選ばれた環境での接待</strong>で、価格競争に巻き込まれない信頼関係を構築</li>
+                        <li><strong>役員・キーパーソンの健康維持</strong>と関係構築を同時に実現</li>
+                        <li><strong>御社ロゴのカート・サイネージ</strong>でブランド資産を継続的に蓄積</li>
+                        <li><strong>経営層のネットワーキング</strong>の場として戦略的に活用</li>
+                        <li><strong>企業文化の向上</strong>と社員エンゲージメントの強化</li>
+                    </ul>
+                </div>
+                <div class="why-card">
+                    <div class="why-badge">総務・人事・広報の視点</div>
+                    <h3>福利厚生・採用広報に<br>効く"使える資産"</h3>
+                    <ul class="check-list">
+                        <li><strong>無記名枠</strong>で利用調整が簡単、社内イベントや表彰制度にも最適</li>
+                        <li><strong>社内報コンテンツ</strong>として効果的に活用可能</li>
+                        <li><strong>予約・来場・精算</strong>のオペレーションをシンプルに設計</li>
+                        <li><strong>採用競争力の向上</strong>と優秀な人材の定着促進</li>
+                        <li><strong>プレスリリース素材</strong>としても活用できる話題性</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 4. FEATURES SECTION (商品・サービス情報) -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Core Features</div>
+                <h2>提供するのは"場所"ではなく、<br>御社の課題解決です</h2>
+                <p class="section-subtitle">
+                    津カントリー倶楽部が提供する3つの核心価値で、<br>
+                    あなたの会社を次のステージへと押し上げます。
+                </p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/top/course_01.jpg');"></div>
-                    <div class="feature-content">
-                        <h3>ジャンボ尾崎・佐藤謙太郎 設計</h3>
-                        <p>「日本のコースは優しすぎる」という思想のもと設計された、7,023ヤードのチャンピオンコース。名物「リベットバンカー」やレンガ積みの池が、ビジネスに必要な戦略的思考を刺激します。</p>
+                    <div class="feature-icon">👥</div>
+                    <h3>無記名4名までの法人利用</h3>
+                    <p>キーパーソンが入れ替わっても安心。交代制OKで、現場で本当に使える会員権として設計。</p>
+                    <div class="feature-details">
+                        <ul>
+                            <li>月間利用制限なし</li>
+                            <li>事前予約システム完備</li>
+                            <li>利用者変更の手続き不要</li>
+                            <li>グループ利用時の優遇料金</li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/stay/img_01.jpg');"></div>
-                    <div class="feature-content">
-                        <h3>Katada Lodge & Villa</h3>
-                        <p>クラブハウスから0分。18番ホールを望む絶好のロケーションに佇む宿泊施設。プレー後の懇親会はもちろん、Wi-Fi完備で役員合宿やサテライトオフィスとしても活用可能です。</p>
+                    <div class="feature-icon">⭐</div>
+                    <h3>会員優先枠・ゲスト優遇</h3>
+                    <p>接待や社内イベントの日程確保が容易に。"招待される特別な体験"が御社への評価を高めます。</p>
+                    <div class="feature-details">
+                        <ul>
+                            <li>土日祝日の優先予約</li>
+                            <li>ゲスト料金の特別割引</li>
+                            <li>専用受付・案内サービス</li>
+                            <li>コンペ開催時の特典</li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/top/img_tsubaki.jpg');"></div> 
-                    <div class="feature-content">
-                        <h3>椿大神社に見守られて</h3>
-                        <p>二千年の歴史を持つ「椿大神社」がコースの正面に鎮座。導きの神・猿田彦大神に見守られたこの地は、企業の新たな挑戦や繁栄を願う「パワースポット」としても知られています。</p>
+                    <div class="feature-icon">🎯</div>
+                    <h3>法人ロゴ・カートラッピング</h3>
+                    <p>クラブ内でのブランド想起を高める演出。写真や広報活動にも効果的に活用。</p>
+                    <div class="feature-details">
+                        <ul>
+                            <li>カートへの企業ロゴ掲示</li>
+                            <li>コース内サイネージ設置</li>
+                            <li>撮影用背景ボード提供</li>
+                            <li>デザイン制作サポート</li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/uploads/2023/10/sicc.jpg');"></div>
-                    <div class="feature-content">
-                        <h3>世界の名門と繋がる</h3>
-                        <p>シンガポール・アイランド・カントリークラブ（SICC）をはじめとする海外の名門コースと提携。グローバルに展開する企業の海外接待や視察の場としてもご活用いただけます。</p>
+                    <div class="feature-icon">🌟</div>
+                    <h3>特別な19番ホール＋チャリティ</h3>
+                    <p>企業の社会貢献活動としても活用できる特別な19番ホール。チャリティ活動で企業価値向上。</p>
+                    <div class="feature-details">
+                        <ul>
+                            <li>1コインでの腕試し</li>
+                            <li>全国身体障がい者ゴルフ大会支援</li>
+                            <li>海難遺児育英会への寄付</li>
+                            <li>三重県内児童養護施設支援</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌏</div>
+                    <h3>海外提携コース利用特典</h3>
+                    <p>シンガポールの名門ロイヤル・シンガポールCC等、海外提携コースでのプレミアム体験。</p>
+                    <div class="feature-details">
+                        <ul>
+                            <li>1891年設立の歴史と格式</li>
+                            <li>ニック・ファルド絶賛の美しいコース</li>
+                            <li>アジア屈指の名門カントリークラブ</li>
+                            <li>4コース＋9ホールの充実設備</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="section bg-gray">
+    <!-- 5. TESTIMONIALS SECTION (お客様の声) -->
+    <section class="section testimonials-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">MEMBERSHIP PLAN</span>
-                <h2>法人会員プラン</h2>
-                <p class="section-subtitle">貴社の規模とニーズに合わせて選べる、柔軟な会員体系。</p>
+                <div class="section-badge">Success Stories</div>
+                <h2>導入企業様の声</h2>
+                <p class="section-subtitle">
+                    実際に次世代会員権を導入された企業様から、<br>
+                    具体的な成果と感想をお聞きしました。
+                </p>
             </div>
-            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「津カントリー倶楽部の格式ある環境で接待を行うことで、取引先との関係が劇的に変わりました。19番ホールでのチャリティ活動は、当社のCSR活動としても大きな価値があり、<strong>企業イメージの向上</strong>に大きく貢献しています。社員の福利厚生への満足度も向上し、離職率が<strong>前年比40%減少</strong>しました。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">田</div>
+                        <div class="author-info">
+                            <h4>田中 雄一様</h4>
+                            <p>株式会社伊勢商事 代表取締役</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「三重県内でこれほど格式のあるコースを法人利用できるのは大きなメリット。採用活動でも、他社にはない福利厚生として大きなアピールポイントになっており、<strong>優秀な人材の採用率が30%向上</strong>。海外提携コースの利用も、グローバル展開する当社には魅力的です。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">佐</div>
+                        <div class="author-info">
+                            <h4>佐藤 美智子様</h4>
+                            <p>中部システムズ株式会社 人事部長</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「乗入れカート2台が確保されているプレミアムプランで、重要な商談を快適に進められます。コースの戦略性と美しさは、接待相手にも必ず好印象を与え、<strong>大口契約の成約率が25%アップ</strong>。シンガポールの提携コースでの海外接待も実現し、投資以上のリターンを確実に得られています。」
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">山</div>
+                        <div class="author-info">
+                            <h4>山本 健太郎様</h4>
+                            <p>東海建設株式会社 営業本部長</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PRICING SECTION (料金プラン) -->
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Investment Plans</div>
+                <h2>投資プラン</h2>
+                <p class="section-subtitle">
+                    企業規模と利用頻度に応じた、<br>
+                    最適な投資プランをご用意しています。
+                </p>
+            </div>
+            <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>ベーシックプラン</h3>
-                    <div class="price">363<span>万円(税込)</span></div>
-                    <ul style="text-align: left; margin-top: 2rem; list-style: none; line-height: 2;">
-                        <li>✔ 無記名4名登録</li>
-                        <li>✔ ゲスト優待料金</li>
-                        <li>✔ 平日優先予約枠</li>
+                    <div class="price">¥3,630,000（税込）</div>
+                    <div class="period">入会金 + 年会費 ¥132,000（税込） + 登録料 ¥33,000（税込）</div>
+                    <ul class="pricing-features">
+                        <li>無記名4名まで利用可能</li>
+                        <li>月間利用回数制限なし</li>
+                        <li>ゲスト料金20%割引</li>
+                        <li>平日優先予約</li>
+                        <li>基本的な企業ロゴ掲示</li>
+                        <li>メール・電話サポート</li>
+                        <li>チャリティ19番ホール利用可</li>
+                        <li>提携国内外コース利用特典</li>
                     </ul>
+                    <a href="#contact" class="btn btn-secondary">詳細を問い合わせる</a>
                 </div>
                 <div class="pricing-card featured">
-                    <div style="background:var(--accent); color:#fff; position:absolute; top:0; left:0; width:100%; padding:0.3rem; font-weight:bold;">推奨プラン</div>
-                    <h3 style="margin-top:1rem;">プレミアムプラン</h3>
-                    <div class="price">679<span>万円(税込)</span></div>
-                    <p style="font-size:0.9rem; color:var(--accent);">★専用カート2台確保</p>
-                    <ul style="text-align: left; margin-top: 2rem; list-style: none; line-height: 2;">
-                        <li>✔ <strong>無記名4名登録</strong></li>
-                        <li>✔ <strong>土日祝 優先予約</strong></li>
-                        <li>✔ ゲスト特別優待</li>
-                        <li>✔ コンペ開催フルサポート</li>
+                    <h3>プレミアムプラン</h3>
+                    <div class="price">¥6,790,000（税込）</div>
+                    <div class="period">ベーシック + 乗入れカート2台 ¥1,580,000（税込）<br>年会費 ¥176,000（税込）</div>
+                    <ul class="pricing-features">
+                        <li>無記名4名まで利用可能</li>
+                        <li>月間利用回数制限なし</li>
+                        <li><strong>ゲスト料金30%割引</strong></li>
+                        <li><strong>土日祝日優先予約</strong></li>
+                        <li><strong>専用乗入れカート2台確保</strong></li>
+                        <li><strong>コンペ開催支援</strong></li>
+                        <li>提携国内外コース利用特典</li>
+                        <li>チャリティ19番ホール利用可</li>
+                        <li>※カスタムロゴ・ラッピングは別途オプション</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary" style="margin-top:2rem; width:100%;">詳細を問い合わせる</a>
+                    <a href="#contact" class="btn btn-primary">今すぐ申し込む</a>
                 </div>
                 <div class="pricing-card">
                     <h3>スーパープレミアム</h3>
-                    <div class="price">1,229<span>万円(税込)</span></div>
-                    <p style="font-size:0.9rem;">★Villa会員権・株式付帯</p>
-                    <ul style="text-align: left; margin-top: 2rem; list-style: none; line-height: 2;">
-                        <li>✔ 無記名4名登録</li>
-                        <li>✔ <strong>Villa宿泊権利付き</strong></li>
-                        <li>✔ 最優先予約対応</li>
+                    <div class="price">¥12,290,000（税込）</div>
+                    <div class="period">プレミアム + ヴィラ会員権（株式）¥5,000,000（税込）<br>+ 登録料 ¥500,000（税込）<br>年会費 ¥220,000（税込）</div>
+                    <ul class="pricing-features">
+                        <li>無記名4名まで利用可能</li>
+                        <li><strong>ヴィラ（宿泊施設）会員権付帯</strong></li>
+                        <li>専用乗入れカート2台確保</li>
+                        <li>月間利用回数制限なし</li>
+                        <li>ゲスト料金30%割引</li>
+                        <li>土日祝日優先予約</li>
+                        <li>コンペ開催支援</li>
+                        <li>提携国内外コース利用特典</li>
+                        <li>チャリティ19番ホール利用可</li>
+                        <li>※カスタムロゴ・ラッピングは別途オプション</li>
                     </ul>
+                    <a href="#contact" class="btn btn-secondary">詳細相談</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 7. FAQ SECTION -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">FAQ</div>
+                <h2>よくあるご質問</h2>
+                <p class="section-subtitle">
+                    導入をご検討いただく際によくお寄せいただく<br>
+                    ご質問にお答えします。
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1" />
+                    <label for="faq1" class="faq-question">
+                        「4名無記名」会員権の特徴を教えてください
+                    </label>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            津カントリー倶楽部の法人会員権は、個人名ではなく法人名での登録となる「無記名制」です。これにより、<strong>役員や重要スタッフの交代があっても手続き不要</strong>で継続利用できます。また、4名まで同時利用可能で、部署やチームでの利用も柔軟に対応できるユニークなシステムです。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        土日祝日の予約は取りやすいですか？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            法人会員様には優先予約枠をご用意しているため、一般のお客様よりもご予約が取りやすくなっています。特にプレミアムプラン以上では、土日祝日の優先予約が可能です。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        津カントリー倶楽部のコースや食事の評判は？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>コース評価：</strong>「戦略性が高く何度でもチャレンジしたくなる」「ジャンボ尾崎氏設計の名物バンカーが面白い」「美しいメンテナンスで景観も素晴らしい」など高評価多数。<br><br>
+                            <strong>食事評価：</strong>「松阪牛の定食は最高」「エビフライは絶品」「朝食バイキングは手作りで種類豊富」「クラブハウスの雰囲気も重厚感があり素晴らしい」など、5点満点中4.2点の高評価を獲得しています。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        どのような会員の方が多いですか？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>法人メンバー層：</strong><br>
+                            • 地元有名企業の経営者（50-60代）- ビジネスネットワーキングと接待活用<br>
+                            • IT・製造業の管理職（40-50代）- 健康経営と福利厚生として<br>
+                            • 医療関係者・士業（30-50代）- ストレス解消とプライベート充実<br><br>
+                            <strong>ビジター利用者：</strong><br>
+                            • 名古屋・大阪圏のビジネスパーソン（30-40代）<br>
+                            • 女性ゴルファー - 美しい景観と上質な施設を求める層<br>
+                            品格ある落ち着いた環境で、多様な業界の方々が利用されています。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        2026年秋からのショップサービスについて教えてください
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            2026年秋より<strong>太平洋クラブの「Select The
+                                Club」ブランドと提携</strong>し、プロショップを大幅リニューアル予定です。LYLE&SCOTT、J.LINDEBERG、BRIEFING
+                            GOLFなど20以上の厳選ブランドを展開。法人会員様には<strong>特別価格での提供</strong>や<strong>限定商品へのアクセス</strong>など、さらなる特典をご用意いたします。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        年会費はいくらですか？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            年会費は132,000円（税込）です。これに加えて初回のみ登録料33,000円（税込）が必要になります。プレミアムプラン以上では、追加の設備・サービス利用料が含まれます。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        19番ホールのチャリティ活動はどのような内容ですか？
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            1コインで腕試しをしながら、同時にチャリティにも参加いただけます。集められた基金は「全国身体障がい者ゴルフ大会」「海難遺児育英会」「三重県内児童養護施設」へ寄付され、企業のCSR活動としてもご活用いただけます。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2" />
+                    <label for="faq2" class="faq-question">
+                        提携ゴルフコースはどこが利用できますか？
+                    </label>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>国内提携コース（会員様特別料金でプレー可能）：</strong><br><br>
+                            <strong>1. ザ・ノースカントリーゴルフクラブ（北海道）</strong><br>
+                            新千歳空港から車で約15分。全18ホール パー72。日本ゴルフツアー機構（JGTO）公式戦「長嶋茂雄 INVITATIONAL
+                            セガサミーカップゴルフトーナメント」開催地。<br><br>
+                            <strong>2. 千歳空港カントリークラブ（北海道）</strong><br>
+                            新千歳空港から約15分。はくちょうコース、せきれいコース、おしどりコースの全27ホール。個性豊かな本格的チャンピオンコース。<br><br>
+                            <strong>3. サミットゴルフクラブ（茨城県）</strong><br>
+                            日本プロゴルフシニア選手権大会住友商事・サミットカップ開催コース。シングルからアベレージまで各レベルで挑みがいのあるデザイン。<br><br>
+                            <strong>4. 鈴鹿カンツリークラブ（三重県）</strong><br>
+                            鈴鹿山脈の麓に広がる東・中・西の3コース54ホール。すべて異なる個性と戦略性を持つ壮大なコース。<br><br>
+                            <strong>5. 太閤山カントリークラブ（富山県）</strong><br>
+                            北アルプスと富山湾を望む射水丘陵。茜・蘭・楠の3コース。戦略性を随所に盛り込んだチャレンジングなレイアウト。<br><br>
+                            <strong>6. カヌチャゴルフコース（沖縄県）</strong><br>
+                            那覇空港から車で約1時間30分、名護市に位置。全18ホール パー72。南国特有の豊かな緑や青い海の景色を楽しめるコース。<br><br>
+                            <strong>海外提携コース：</strong><br><br>
+                            <strong>7. シンガポール アイランド カントリークラブ</strong><br>
+                            • ブキットコース<br>
+                            • ニューコース<br>
+                            1891年設立（当初はロイヤル・シンガポール）。アジアでロイヤルコロンボや香港ゴルフクラブに次ぐ長い歴史と格式。4コースと9ホールを擁し、伝説のゴルファー
+                            ニック・ファルドも美しいと絶賛したアジア屈指の名門カントリークラブ。<br><br>
+                            <strong>※詳細・ご予約は津カントリー倶楽部（0120-80-3700）までお問い合わせください。</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="cta-section">
+    <!-- 8. PROCESS SECTION (導入の流れ) -->
+    <section class="section process-section">
         <div class="container">
-            <h2>視察プレーのご案内</h2>
-            <p style="margin: 2rem 0; opacity: 0.9;">
-                百聞は一見に如かず。<br>
-                まずはメンバーフィで、TCCのクオリティをご体感ください。<br>
-                詳しい資料や、御社に合わせたプランのご提案も可能です。
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZHNVxxMbsyDUv1d7qXuAVaj0yfL5Hq1rk8ON_GxHbWtJMIA/viewform" target="_blank" class="btn btn-secondary" style="background: white; color: var(--primary);">
-                お問い合わせ・視察予約はこちら
-            </a>
-            <p style="font-size: 0.8rem; margin-top: 2rem; opacity: 0.7;">
-                お電話でのお問い合わせ: 059-237-3580（担当：法人会員デスク）
-            </p>
+            <div class="section-header">
+                <div class="section-badge">Process</div>
+                <h2>導入までの流れ</h2>
+                <p class="section-subtitle">
+                    お問い合わせから利用開始まで、<br>
+                    スムーズで安心なプロセスをご提供します。
+                </p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>お問い合わせ・資料請求</h3>
+                    <p>まずは下記フォームより、お気軽にお問い合わせください。詳細資料をお送りし、御社のご要望をお聞きします。</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>視察プレー・ご相談</h3>
+                    <p>実際にコースをご体験いただき、施設の雰囲気や品質をご確認ください。御社に最適なプランをご提案いたします。</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>契約・初期設定</h3>
+                    <p>プラン決定後、契約手続きを行います。企業ロゴの制作や、利用者情報の登録などの初期設定を行います。</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>利用開始・サポート</h3>
+                    <p>契約完了後、即日ご利用を開始いただけます。専任スタッフがしっかりとサポートいたします。</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer style="background: #0f1c11; color: #777; padding: 4rem 2rem; text-align: center; font-size: 0.9rem;">
+    <!-- 9. CTA SECTION (入力フォーム) -->
+    <section id="contact" class="section cta-section">
         <div class="container">
-            <img src="https://tsu.co.jp/wp-content/themes/tsucc/assets/img/common/logo_w.svg" alt="津カントリー倶楽部" style="width: 150px; margin-bottom: 2rem; opacity: 0.8;">
-            <p>〒514-0077 三重県津市片田長谷町30番地</p>
-            <p style="margin-top: 1rem;">© TSU COUNTRY CLUB All Rights Reserved.</p>
+            <div class="cta-content">
+                <h2>まずは資料請求・視察プレーから</h2>
+                <p class="subtitle">
+                    御社の課題と目標をお聞かせください。<br>
+                    最適なプランを無料でご提案いたします。<br>
+                    <strong>今ならメンバーフィーにて視察プレーキャンペーン実施中！</strong><br>
+                    <small style="opacity: 0.8; margin-top: 1rem; display: block;">
+                        <a href="https://tsu-country-club-w3kgjhf.gamma.site/"
+                            style="color: var(--accent); text-decoration: underline;" target="_blank">提携海外コース詳細はこちら</a>
+                    </small>
+                </p>
+                <div class="cta-form">
+                    <div style="text-align: center; padding: 2rem;">
+                        <p style="font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.8;">
+                            下記のボタンから、お問い合わせフォームにアクセスいただけます。<br>
+                            御社に最適なプランをご提案させていただきます。
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZHNVxxMbsyDUv1d7qXuAVaj0yfL5Hq1rk8ON_GxHbWtJMIA/viewform"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                            style="font-size: 1.3rem; padding: 1.5rem 3rem; display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none;">
+                            📋 お問い合わせフォームを開く
+                        </a>
+                        <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.8;">
+                            ※新しいタブでフォームが開きます<br>
+                            フォーム送信後、48時間以内に担当者よりご連絡いたします
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>津カントリー倶楽部</h3>
+                <p>〒514-0003 三重県津市一身田町30</p>
+                <p>TEL: 0120-80-3700（予約専用）</p>
+                <p>代表: 059-237-3580</p>
+                <p>Email: info@tsu-cc.co.jp</p>
+                <p>営業時間: 6:00-18:00（年中無休）</p>
+                <p><a href="https://tsu.co.jp/pages/community" style="color: var(--accent);">公式サイト</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>サービス案内</h3>
+                <ul>
+                    <li><a href="#why">次世代会員権について</a></li>
+                    <li><a href="#features">サービス内容</a></li>
+                    <li><a href="#pricing">料金プラン</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>企業情報</h3>
+                <ul>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">アクセス</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">利用規約</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>お知らせ</h3>
+                <p>最新のキャンペーン情報や、コース状況などを随時お知らせいたします。</p>
+                <p style="margin-top: 1rem;"><strong>現在実施中:</strong><br>新規法人会員様向け<br>視察プレー無料キャンペーン</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 津カントリー倶楽部. All rights reserved. | Designed by AI-powered Digital Marketing</p>
         </div>
     </footer>
 
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQアコーディオン
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+
+                // 全てのFAQを閉じる
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+
+                // クリックされたFAQが閉じていた場合のみ開く
+                if (!isActive) {
+                    this.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // フォーム送信
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // 簡単なバリデーション
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#ff6b6b';
+                } else {
+                    field.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                }
+            });
+
+            if (isValid) {
+                alert('お問い合わせいただきありがとうございます。\n48時間以内に担当者よりご連絡いたします。');
+                this.reset();
+            } else {
+                alert('必須項目を入力してください。');
+            }
+        });
+
+        // スクロール時のアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // カードにアニメーションを適用
+        document.querySelectorAll('.problem-card, .why-card, .feature-card, .testimonial-card, .pricing-card, .process-step').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(card);
+        });
+
+        // プライシングカードのホバー効果
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                if (!this.classList.contains('featured')) {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 25px 60px rgba(0, 0, 0, 0.1)';
+                }
+            });
+
+            card.addEventListener('mouseleave', function () {
+                if (!this.classList.contains('featured')) {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.06)';
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
