@@ -6,993 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>津カントリー倶楽部｜法人向け次世代会員権で企業価値を最大化</title>
     <meta name="description" content="福利厚生・接待価値・企業ブランディングを同時に高める法人専用会員権。津カントリー倶楽部で、社員とお客様に特別な体験を提供し、企業価値を向上させませんか？">
-    <style>
-        :root {
-            --primary: #2c5530;
-            --primary-light: #4a7c59;
-            --accent: #d4af37;
-            --accent-light: #e8c547;
-            --bg-dark: #0a1a0c;
-            --bg-light: #f8fdf9;
-            --text-dark: #1a2e1d;
-            --text-light: #6b7c6f;
-            --white: #ffffff;
-            --gray-100: #f7f8f9;
-            --gray-200: #e9ecef;
-            --gray-300: #dee2e6;
-            --success: #28a745;
-            --warning: #ffc107;
-            --info: #17a2b8;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* ===============================
-           1. HERO SECTION (ファーストビュー)
-           =============================== */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg,
-                    var(--bg-dark) 0%,
-                    var(--primary) 50%,
-                    var(--primary-light) 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(212,175,55,0.1)"/><stop offset="100%" stop-color="rgba(212,175,55,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)" opacity="0.6"><animate attributeName="r" values="100;150;100" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23g)" opacity="0.4"><animate attributeName="r" values="80;120;80" dur="6s" repeatCount="indefinite"/></circle><circle cx="600" cy="700" r="120" fill="url(%23g)" opacity="0.3"><animate attributeName="r" values="120;180;120" dur="5s" repeatCount="indefinite"/></circle></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(1deg);
-            }
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            color: var(--white);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            animation: slideInDown 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: slideInLeft 1s ease-out 0.3s both;
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
-            max-width: 800px;
-            animation: slideInLeft 1s ease-out 0.6s both;
-        }
-
-        .cta-container {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 4rem;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-
-        .btn {
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, var(--accent), var(--accent-light));
-            color: var(--text-dark);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .trust-strip {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 1.2s both;
-        }
-
-        .trust-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* ===============================
-           2. SECTIONS COMMON STYLES
-           =============================== */
-        .section {
-            padding: 6rem 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--white);
-            padding: 0.4rem 1.2rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .section h2 {
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            line-height: 1.3;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* ===============================
-           3. PROBLEM SECTION (導入文)
-           =============================== */
-        .problem-section {
-            background: var(--bg-light);
-            position: relative;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .problem-card {
-            background: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #ffa726);
-        }
-
-        .problem-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .problem-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, #ff6b6b, #ffa726);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 3rem;
-            color: var(--white);
-        }
-
-        .problem-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .problem-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-
-        /* ===============================
-           4. WHY SECTION (価値提案)
-           =============================== */
-        .why-section {
-            background: var(--white);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .why-card {
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-            border-left: 6px solid var(--accent);
-            transition: all 0.3s ease;
-        }
-
-        .why-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .why-badge {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .why-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-            font-weight: 700;
-            line-height: 1.4;
-        }
-
-        .check-list {
-            list-style: none;
-        }
-
-        .check-list li {
-            padding: 1rem 0;
-            padding-left: 3rem;
-            position: relative;
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-
-        .check-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            background: rgba(212, 175, 55, 0.1);
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            top: 0.8rem;
-        }
-
-        /* ===============================
-           5. FEATURES SECTION (商品・サービス情報)
-           =============================== */
-        .features-section {
-            background: var(--bg-light);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, var(--accent), var(--accent-light));
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, var(--primary), var(--primary-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2.5rem;
-            color: var(--white);
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .feature-details {
-            background: var(--gray-100);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: left;
-        }
-
-        .feature-details ul {
-            list-style: none;
-        }
-
-        .feature-details li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--text-light);
-        }
-
-        .feature-details li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* ===============================
-           6. TESTIMONIALS SECTION (お客様の声)
-           =============================== */
-        .testimonials-section {
-            background: var(--white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial-card {
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-            position: relative;
-            border: 1px solid var(--gray-200);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 30px;
-            font-size: 6rem;
-            color: var(--accent);
-            opacity: 0.3;
-            font-family: serif;
-        }
-
-        .testimonial-content {
-            margin-bottom: 2rem;
-            color: var(--text-light);
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .author-image {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .author-info h4 {
-            color: var(--text-dark);
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-
-        .author-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* ===============================
-           7. PRICING SECTION (料金プラン)
-           =============================== */
-        .pricing-section {
-            background: var(--bg-light);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px solid var(--gray-200);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .pricing-card.featured {
-            border-color: var(--accent);
-            transform: scale(1.05);
-            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2);
-        }
-
-        .pricing-card.featured::before {
-            content: '人気プラン';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: var(--white);
-            padding: 0.5rem 2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .pricing-card .price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-card .period {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 3rem;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.8rem 0;
-            position: relative;
-            padding-left: 2rem;
-            color: var(--text-light);
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* ===============================
-           8. FAQ SECTION
-           =============================== */
-        .faq-section {
-            background: var(--white);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 2rem;
-            background: var(--gray-100);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid var(--gray-200);
-        }
-
-        .faq-question {
-            padding: 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-
-        .faq-question:hover {
-            background: var(--gray-200);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item input[type="checkbox"] {
-            display: none;
-        }
-
-        .faq-item input[type="checkbox"]:checked+.faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            background: var(--white);
-        }
-
-        .faq-item input[type="checkbox"]:checked~.faq-answer {
-            max-height: 1000px;
-            padding: 2rem;
-        }
-
-        .faq-answer-content {
-            padding: 2rem;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* ===============================
-           9. PROCESS SECTION (導入の流れ)
-           =============================== */
-        .process-section {
-            background: var(--bg-light);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .process-step {
-            background: var(--white);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            border: 2px solid var(--gray-200);
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .process-step h3 {
-            margin: 2rem 0 1.5rem;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .process-step p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* ===============================
-           10. CTA SECTION
-           =============================== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.05)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g)" opacity="0.6"><animate attributeName="r" values="100;150;100" dur="4s" repeatCount="indefinite"/></circle><circle cx="800" cy="300" r="80" fill="url(%23g)" opacity="0.4"><animate attributeName="r" values="80;120;80" dur="6s" repeatCount="indefinite"/></circle></svg>');
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            margin-bottom: 2rem;
-            font-size: clamp(2rem, 4vw, 3rem);
-        }
-
-        .cta-section .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 4rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .cta-form {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 2rem;
-            border-radius: 25px;
-            max-width: 700px;
-            margin: 0 auto;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-        }
-
-        .cta-form iframe {
-            display: block;
-            margin: 0 auto;
-            border-radius: 15px;
-        }
-
-        /* ===============================
-           11. FOOTER
-           =============================== */
-        .footer {
-            background: var(--bg-dark);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .footer-section p,
-        .footer-section li {
-            margin: 0.8rem 0;
-            line-height: 1.6;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* ===============================
-           12. ANIMATIONS
-           =============================== */
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===============================
-           13. RESPONSIVE DESIGN
-           =============================== */
-        @media (max-width: 768px) {
-            .hero-content {
-                padding: 1rem;
-            }
-
-            .cta-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                text-align: center;
-                justify-content: center;
-            }
-
-            .trust-strip {
-                justify-content: center;
-            }
-
-            .section {
-                padding: 4rem 1rem;
-            }
-
-            .why-grid,
-            .features-grid,
-            .testimonials-grid,
-            .pricing-grid,
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-form {
-                padding: 2rem 1.5rem;
-            }
-
-            .cta-form iframe {
-                height: 2200px;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-card,
-            .problem-card,
-            .feature-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .section-header {
-                margin-bottom: 3rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!-- 1. HERO SECTION (ファーストビュー) -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">
-                🏌️ 法人向け特別プラン | 福利厚生 × 接待 × 企業ブランディング
-            </div>
-            <h1>
-                社員とお客様に<br>
-                <span style="color: var(--accent);">特別な体験</span>を。<br>
-                次世代会員権で、<br>
-                企業価値を最大化。
-            </h1>
-            <p class="subtitle">
-                津カントリー倶楽部の法人専用「次世代会員権」で、<br>
-                人材定着・採用競争力・取引先からの信頼を同時に向上させ、<br>
-                選ばれる会社へと導きます。
-            </p>
-            <div class="cta-container">
-                <a href="#contact" class="btn btn-primary">
-                    📋 無料資料請求・視察プレー予約
-                </a>
-                <a href="#problem" class="btn btn-secondary">
-                    💡 なぜ今、会員権なのか？
-                </a>
+            <div class="hero-main">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        🏌️ 法人向け特別プラン | 福利厚生 × 接待 × 企業ブランディング
+                    </div>
+                    <h1>
+                        社員とお客様に<br>
+                        <span style="color: var(--accent);">特別な体験</span>を。<br>
+                        次世代会員権で、<br>
+                        企業価値を最大化。
+                    </h1>
+                    <p class="subtitle">
+                        津カントリー倶楽部の法人専用「次世代会員権」で、<br>
+                        人材定着・採用競争力・取引先からの信頼を同時に向上させ、<br>
+                        選ばれる会社へと導きます。
+                    </p>
+                    <div class="cta-container">
+                        <a href="#contact" class="btn btn-primary">
+                            📋 無料資料請求・視察プレー予約
+                        </a>
+                        <a href="#problem" class="btn btn-secondary">
+                            💡 なぜ今、会員権なのか？
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/9H_portl.jpg" alt="TCC Portal" />
+                </div>
             </div>
             <div class="trust-strip">
                 <div class="trust-item">✅ 全国・海外の名門コースと提携</div>
@@ -1004,7 +52,30 @@
         </div>
     </section>
 
-    <!-- 2. PROBLEM SECTION (導入文 - 痛みの指摘) -->
+    <!-- 2. VISION SECTION (理念・ビジョン) -->
+    <section class="section vision-section">
+        <div class="row m-0 p-0 vision-container">
+            <div class="vision-image">
+                <img src="images/katada_villa.jpeg" alt="Katada Villa">
+            </div>
+            <div class="vision-content">
+                <div class="vision-text-wrapper">
+                    <h2>これからの企業価値は、<br>「人」と「繋がり」への<br>投資で決まる。</h2>
+                    <p>
+                        成功を収める企業は、単なる利益追求を超え、<br>
+                        従業員が心身ともに豊かに働ける環境と、<br>
+                        強固なビジネスネットワークを構築しています。
+                    </p>
+                    <p>
+                        それは、持続的な成長を実現するための、<br>
+                        最も確かな経営戦略です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROBLEM SECTION (導入文 - 痛みの指摘) -->
     <section id="problem" class="section problem-section">
         <div class="container">
             <div class="section-header">
@@ -1153,6 +224,87 @@
         </div>
     </section>
 
+    <!-- 4.5 REASON FOR EXCELLENCE SECTION -->
+    <section class="section reason-section">
+        <div class="reason-container">
+            <div class="reason-content-wrapper">
+                <h2 class="reason-main-title">私たちが「一流」にこだわり続ける理由。</h2>
+
+                <div class="reason-items">
+                    <div class="reason-item">
+                        <h3 class="reason-item-title">プロ設計の戦略的コース</h3>
+                        <p class="reason-item-text">
+                            ジャンボ尾崎プロと佐藤謙太郎氏が「世界のレベルに匹敵するコース」を目指し設計。7,023ヤードの本格レイアウトが、挑戦意欲を掻き立てます。
+                        </p>
+                    </div>
+
+                    <div class="reason-item">
+                        <h3 class="reason-item-title">伝統と格式への想い</h3>
+                        <p class="reason-item-text">
+                            品格あるクラブハウス、ゲストを招き入れる重厚な木のゲート。日常の多忙な時間を忘れ、ゆったり流れる「刻」を満喫いただくため、時計の姿がほとんど見られないのも特徴です。
+                        </p>
+                    </div>
+
+                    <div class="reason-item">
+                        <h3 class="reason-item-title">自然との調和</h3>
+                        <p class="reason-item-text">
+                            150haの敷地に広がる豊かな自然。二千年の歴史を持つ椿神山を望み、EM微生物を活用した環境配慮型のコース管理を実践しています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reason-image-wrapper">
+                <img src="images/18_Hasedera.jpg" alt="Hasedera Course View" class="reason-bg-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.8 AFTER GOLF IMAGE SECTION -->
+    <section class="section full-image-section">
+        <img src="images/After_golf.png" alt="Relaxing after golf" class="full-width-image">
+    </section>
+
+
+
+    <!-- 5.5 ACCESS MAP SECTION -->
+    <section class="section access-section">
+        <div class="access-container">
+            <div class="access-header">
+                <h2 class="access-title">一つのメンバーシップが、全国そして世界への扉を開きます。</h2>
+                <p class="access-description">
+                    北海道から沖縄、さらにシンガポールまで。提携する国内外の名門コースでも<br>
+                    メンバー待遇のプレーをお楽しみいただけます。<br>
+                    出張先や旅行先でのビジネス接待やリフレッシュにご活用ください。
+                </p>
+            </div>
+
+            <div class="access-body">
+                <div class="access-info">
+                    <div class="access-item">
+                        <h4 class="access-label">■ 電車</h4>
+                        <p>名古屋駅〜津駅 近鉄火の鳥 (45分)<br>+ お車約(20分)</p>
+                    </div>
+                    <div class="access-item">
+                        <h4 class="access-label">■ 中部国際空港からのフェリー</h4>
+                        <p>セントレア〜津なぎさ町 (45分)<br>+ お車約(20分)</p>
+                    </div>
+                    <div class="access-item">
+                        <h4 class="access-label">■ お車</h4>
+                        <p>名古屋から (1時間20分)<br>津駅から (25分)</p>
+                    </div>
+                </div>
+                <div class="access-map-wrapper">
+                    <img src="images/TCC_map.png" alt="Access Map" class="access-map-image">
+                </div>
+            </div>
+
+            <div class="access-locations">
+                北海道 <span>|</span> 茨城 <span>|</span> 富山 <span>|</span> 三重 <span>|</span> 沖縄 <span>|</span> シンガポール
+            </div>
+        </div>
+    </section>
+
     <!-- 5. TESTIMONIALS SECTION (お客様の声) -->
     <section class="section testimonials-section">
         <div class="container">
@@ -1209,68 +361,246 @@
     <section class="section pricing-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Investment Plans</div>
-                <h2>投資プラン</h2>
+                <h2>企業の戦略に合わせて選べる、3つの投資プラン。</h2>
                 <p class="section-subtitle">
-                    企業規模と利用頻度に応じた、<br>
-                    最適な投資プランをご用意しています。
+                    ※2026年以降、入会金改定予定。今が最も価値ある投資の機会です。
                 </p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>ベーシックプラン</h3>
-                    <div class="price">¥3,630,000（税込）</div>
-                    <div class="period">入会金 + 年会費 ¥132,000（税込） + 登録料 ¥33,000（税込）</div>
-                    <ul class="pricing-features">
-                        <li>無記名4名まで利用可能</li>
-                        <li>月間利用回数制限なし</li>
-                        <li>ゲスト料金20%割引</li>
-                        <li>平日優先予約</li>
-                        <li>基本的な企業ロゴ掲示</li>
-                        <li>メール・電話サポート</li>
-                        <li>チャリティ19番ホール利用可</li>
-                        <li>提携国内外コース利用特典</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">詳細を問い合わせる</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>プレミアムプラン</h3>
-                    <div class="price">¥6,790,000（税込）</div>
-                    <div class="period">ベーシック + 乗入れカート2台 ¥1,580,000（税込）<br>年会費 ¥176,000（税込）</div>
-                    <ul class="pricing-features">
-                        <li>無記名4名まで利用可能</li>
-                        <li>月間利用回数制限なし</li>
-                        <li><strong>ゲスト料金30%割引</strong></li>
-                        <li><strong>土日祝日優先予約</strong></li>
-                        <li><strong>専用乗入れカート2台確保</strong></li>
-                        <li><strong>コンペ開催支援</strong></li>
-                        <li>提携国内外コース利用特典</li>
-                        <li>チャリティ19番ホール利用可</li>
-                        <li>※カスタムロゴ・ラッピングは別途オプション</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">今すぐ申し込む</a>
+                    <div class="price">¥3,762,000 <span class="tax">(税込)</span></div>
+                    <div class="period">
+                        入会金 ¥3,300,000 + 登録料 ¥330,000<br>
+                        年会費¥132,000
+                    </div>
+                    <p class="plan-desc">
+                        企業の福利厚生やビジネス利用<br>
+                        の基盤となるプラン。
+                    </p>
+                    <div class="plan-footer">
+                        無記名4名まで利用可能 |<br>
+                        月間利用回数制限なし
+                    </div>
                 </div>
                 <div class="pricing-card">
-                    <h3>スーパープレミアム</h3>
-                    <div class="price">¥12,290,000（税込）</div>
-                    <div class="period">プレミアム + ヴィラ会員権（株式）¥5,000,000（税込）<br>+ 登録料 ¥500,000（税込）<br>年会費 ¥220,000（税込）</div>
-                    <ul class="pricing-features">
-                        <li>無記名4名まで利用可能</li>
-                        <li><strong>ヴィラ（宿泊施設）会員権付帯</strong></li>
-                        <li>専用乗入れカート2台確保</li>
-                        <li>月間利用回数制限なし</li>
-                        <li>ゲスト料金30%割引</li>
-                        <li>土日祝日優先予約</li>
-                        <li>コンペ開催支援</li>
-                        <li>提携国内外コース利用特典</li>
-                        <li>チャリティ19番ホール利用可</li>
-                        <li>※カスタムロゴ・ラッピングは別途オプション</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary">詳細相談</a>
+                    <h3>プレミアムプラン</h3>
+                    <div class="price">¥6,922,000 <span class="tax">(税込)</span></div>
+                    <div class="period">
+                        ベーシック + カート¥1,580,000×2台
+                    </div>
+                    <p class="plan-desc">
+                        メンバー様用のオリジナルカートで<br>
+                        特別なゲストへのおもてなしを<br>
+                        格上げします。
+                    </p>
+                    <div class="plan-footer">
+                        ベーシックの全特典 +<br>
+                        専用乗入れカート 2名用×2台
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <h3>スーパープレミアムプラン</h3>
+                    <div class="price">¥12,422,000 <span class="tax">(税込)</span></div>
+                    <div class="period">
+                        プレミアム + ¥5,500,000
+                    </div>
+                    <p class="plan-desc">
+                        ゴルフと宿泊を一体化させた<br>
+                        究極の会員権。企業の迎賓館<br>
+                        としてご活用いただけます。
+                    </p>
+                    <div class="plan-footer">
+                        プレミアムの全特典 +<br>
+                        ヴィラ（宿泊施設）会員権 |
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- 6.5 CHECK LIST SECTION -->
+    <section class="section comparison-section">
+        <div class="container">
+            <div class="section-header text-left">
+                <h2 style="text-align: left; margin-bottom: 3rem;">各プラン特典 詳細比較。</h2>
+            </div>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特典</th>
+                            <th>ベーシック</th>
+                            <th>プレミアム</th>
+                            <th>スーパープレミアム</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>無記名4名まで利用可能</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>月間利用回数制限なし</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>土日祝日優先予約</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>コンペ開催支援</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>チャリティ19番ホール利用可</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>国内提携コース利用</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>専用乗入れカート2台確保</td>
+                            <td></td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>提携国内外コース利用特典</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>ヴィラ会員権（株式）</td>
+                            <td></td>
+                            <td></td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>ヴィラ無制限利用</td>
+                            <td></td>
+                            <td></td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>海外提携コース優待</td>
+                            <td></td>
+                            <td></td>
+                            <td class="check">✔</td>
+                        </tr>
+                        <tr>
+                            <td>宿泊・接待パッケージ</td>
+                            <td></td>
+                            <td></td>
+                            <td class="check">✔</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="comparison-note">※プレミアムプランのカート・カスタムロゴ/ラッピングは別途オプションとなります。</p>
+        </div>
+    </section>
+
+    <!-- 6.8 PARTNER COURSES SECTION -->
+    <section class="section partner-section">
+        <div class="container">
+            <div class="section-header text-left">
+                <h2 style="text-align: left; margin-bottom: 2rem;">全国に広がる、一流のステージ。</h2>
+            </div>
+
+            <!-- Domestic Courses -->
+            <div class="partner-group">
+                <h3 class="partner-subtitle">国内提携コース</h3>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table partner-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">コース名</th>
+                                <th style="width: 15%;">所在地</th>
+                                <th style="width: 55%;">特徴</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-left font-bold">ザ・ノースカントリーゴルフクラブ</td>
+                                <td>北海道千歳市</td>
+                                <td class="text-left">新千歳空港から15分。JGTO公式戦開催実績。</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left font-bold">千歳空港カントリークラブ</td>
+                                <td>北海道千歳市</td>
+                                <td class="text-left">個性豊かな3コース・全27ホールのチャンピオンコース。</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left font-bold">サミットゴルフクラブ</td>
+                                <td>茨城県</td>
+                                <td class="text-left">日本プロゴルフシニア選手権大会開催コース。</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left font-bold">鈴鹿カンツリークラブ</td>
+                                <td>三重県</td>
+                                <td class="text-left">東・中・西の3コースからなる54ホール。</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left font-bold">太閤山カントリークラブ</td>
+                                <td>富山県</td>
+                                <td class="text-left">北アルプスを望む景観と3つのコース。</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left font-bold">カヌチャゴルフコース</td>
+                                <td>沖縄県</td>
+                                <td class="text-left">美しい自然に囲まれたリゾート一体型コース。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Overseas Courses -->
+            <div class="partner-group" style="margin-top: 3rem;">
+                <h3 class="partner-subtitle">海外提携コース</h3>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table partner-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">コース名</th>
+                                <th style="width: 15%;">所在地</th>
+                                <th style="width: 55%;">特徴</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-left font-bold">シンガポール アイランドカントリークラブ</td>
+                                <td>シンガポール</td>
+                                <td class="text-left">1891年設立、アジアでも屈指の歴史と格式を誇る名門。</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left font-bold">タナ・メラ・カントリークラブ</td>
+                                <td>シンガポール</td>
+                                <td class="text-left">18ホール、パー72のチャンピオンシップコースを2つ携える</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- 7. FAQ SECTION -->
     <section class="section faq-section">
         <div class="container">
@@ -1284,10 +614,10 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <input type="checkbox" id="faq1" />
-                    <label for="faq1" class="faq-question">
+
+                    <div class="faq-question">
                         「4名無記名」会員権の特徴を教えてください
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             津カントリー倶楽部の法人会員権は、個人名ではなく法人名での登録となる「無記名制」です。これにより、<strong>役員や重要スタッフの交代があっても手続き不要</strong>で継続利用できます。また、4名まで同時利用可能で、部署やチームでの利用も柔軟に対応できるユニークなシステムです。
@@ -1365,10 +695,10 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <input type="checkbox" id="faq2" />
-                    <label for="faq2" class="faq-question">
+
+                    <div class="faq-question">
                         提携ゴルフコースはどこが利用できますか？
-                    </label>
+                    </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <strong>国内提携コース（会員様特別料金でプレー可能）：</strong><br><br>
@@ -1511,106 +841,7 @@
         </div>
     </footer>
 
-    <script>
-        // スムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // FAQアコーディオン
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function () {
-                const answer = this.nextElementSibling;
-                const isActive = this.classList.contains('active');
-
-                // 全てのFAQを閉じる
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    q.classList.remove('active');
-                    q.nextElementSibling.classList.remove('active');
-                });
-
-                // クリックされたFAQが閉じていた場合のみ開く
-                if (!isActive) {
-                    this.classList.add('active');
-                    answer.classList.add('active');
-                }
-            });
-        });
-
-        // フォーム送信
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // 簡単なバリデーション
-            const requiredFields = this.querySelectorAll('[required]');
-            let isValid = true;
-
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = '#ff6b6b';
-                } else {
-                    field.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                }
-            });
-
-            if (isValid) {
-                alert('お問い合わせいただきありがとうございます。\n48時間以内に担当者よりご連絡いたします。');
-                this.reset();
-            } else {
-                alert('必須項目を入力してください。');
-            }
-        });
-
-        // スクロール時のアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // カードにアニメーションを適用
-        document.querySelectorAll('.problem-card, .why-card, .feature-card, .testimonial-card, .pricing-card, .process-step').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(card);
-        });
-
-        // プライシングカードのホバー効果
-        document.querySelectorAll('.pricing-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                if (!this.classList.contains('featured')) {
-                    this.style.transform = 'translateY(-10px)';
-                    this.style.boxShadow = '0 25px 60px rgba(0, 0, 0, 0.1)';
-                }
-            });
-
-            card.addEventListener('mouseleave', function () {
-                if (!this.classList.contains('featured')) {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.06)';
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
