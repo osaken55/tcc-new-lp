@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>津カントリー倶楽部｜法人向け次世代会員権</title>
+    <meta name="description" content="ジャンボ尾崎設計の戦略的コースと、Katada Lodge & Villaでの特別な滞在。福利厚生・接待・企業ブランディングを高める法人専用会員権。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* TCCのブランドカラーを意識した配色 */
+            --primary: #1a3c25; /* より深みのあるグリーン */
+            --primary-light: #3a5c45;
+            --accent: #c5a059; /* 落ち着いたゴールド */
+            --accent-light: #e6c575;
+            --bg-dark: #0f1c11;
+            --bg-light: #f9fbf9;
+            --text-dark: #111111;
+            --text-light: #555555;
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif; /* 基本はゴシック */
+            line-height: 1.8;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--bg-light);
+        }
+        
+        h1, h2, h3, .serif {
+            font-family: 'Noto Serif JP', serif; /* 見出しは明朝体で高級感を */
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* ===============================
+           1. HERO SECTION (メインビジュアル)
+           =============================== */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            /* 公式サイトのようなコース画像を背景に設定してください */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                /* ↓↓ ここに公式サイトのコース画像のURLを入れてください ↓↓ */
+                url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/top/main_01.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* パララックス効果 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+
+        /* 画像が読み込めない場合のフォールバック */
+        .hero {
+            background-color: var(--primary);
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            padding: 2rem;
+            z-index: 2;
+            color: var(--white);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.9); /* ゴールド背景 */
+            padding: 0.6rem 2rem;
+            color: #000;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+        
+        .cta-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+        
+        .btn {
+            padding: 1.2rem 3rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            transition: all 0.4s ease;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            min-width: 240px;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+            border: 1px solid var(--accent);
+        }
+        
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--accent);
+            border-color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-item::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        /* ===============================
+           SECTIONS COMMON
+           =============================== */
+        .section { padding: 8rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 6rem; }
+        
+        .section-badge {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===============================
+           FEATURES (USP)
+           =============================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 0;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease;
+            overflow: hidden;
+        }
+
+        .feature-card:hover { transform: translateY(-10px); }
+
+        .feature-img {
+            height: 200px;
+            background-color: var(--gray-200);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .feature-content { padding: 2.5rem; }
+
+        .feature-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ===============================
+           PRICING (Elegant)
+           =============================== */
+        .pricing-section { background: var(--bg-light); }
+        
+        .pricing-card {
+            background: var(--white);
+            padding: 3rem;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(197, 160, 89, 0.15);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        
+        .price {
+            font-size: 2.5rem;
+            font-family: 'Noto Serif JP', serif;
+            color: var(--primary);
+            font-weight: 600;
+            margin: 1.5rem 0;
+        }
+
+        .price span { font-size: 1rem; color: var(--text-light); }
+
+        /* ===============================
+           CONTACT
+           =============================== */
+        .cta-section {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        
+        /* Utility */
+        .text-accent { color: var(--accent); }
+        .bg-gray { background-color: var(--gray-100); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section { padding: 5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">CORPORATE MEMBERSHIP</div>
+            <h1>
+                戦略と品格が交差する、<br>
+                <span class="text-accent" style="font-style: italic;">本物</span>のクラブライフ。
+            </h1>
+            <p class="subtitle">
+                ジャンボ尾崎設計の戦略的コースと、Katada Lodge & Villaでの特別な滞在。<br>
+                津カントリー倶楽部は、貴社の「企業価値」と「人」を育む舞台となります。
+            </p>
+            <div class="cta-container">
+                <a href="#contact" class="btn btn-primary">資料請求・視察プレー予約</a>
+                <a href="#features" class="btn btn-secondary">TCCだけの体験とは</a>
+            </div>
+            <div class="trust-strip">
+                <div class="trust-item">椿大神社のお膝元</div>
+                <div class="trust-item">無記名4名利用</div>
+                <div class="trust-item">サテライトオフィス対応</div>
+                <div class="trust-item">海外名門コース提携</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FOR EXECUTIVES</span>
+                <h2>単なる「接待」を超えた価値を</h2>
+                <p class="section-subtitle">
+                    現代のビジネスシーンにおいて、ゴルフ会員権に求められるのは「プレー権」だけではありません。<br>
+                    社員のエンゲージメント向上、創造的なオフサイトミーティング、そして特別なゲストへの最上級のおもてなし。<br>
+                    TCCはそのすべてを叶えるソリューションを提供します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">OUR VALUE</span>
+                <h2>選ばれる4つの理由</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/top/course_01.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>ジャンボ尾崎・佐藤謙太郎 設計</h3>
+                        <p>「日本のコースは優しすぎる」という思想のもと設計された、7,023ヤードのチャンピオンコース。名物「リベットバンカー」やレンガ積みの池が、ビジネスに必要な戦略的思考を刺激します。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/stay/img_01.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>Katada Lodge & Villa</h3>
+                        <p>クラブハウスから0分。18番ホールを望む絶好のロケーションに佇む宿泊施設。プレー後の懇親会はもちろん、Wi-Fi完備で役員合宿やサテライトオフィスとしても活用可能です。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/themes/tsucc/assets/img/top/img_tsubaki.jpg');"></div> 
+                    <div class="feature-content">
+                        <h3>椿大神社に見守られて</h3>
+                        <p>二千年の歴史を持つ「椿大神社」がコースの正面に鎮座。導きの神・猿田彦大神に見守られたこの地は、企業の新たな挑戦や繁栄を願う「パワースポット」としても知られています。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://tsu.co.jp/wp-content/uploads/2023/10/sicc.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>世界の名門と繋がる</h3>
+                        <p>シンガポール・アイランド・カントリークラブ（SICC）をはじめとする海外の名門コースと提携。グローバルに展開する企業の海外接待や視察の場としてもご活用いただけます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">MEMBERSHIP PLAN</span>
+                <h2>法人会員プラン</h2>
+                <p class="section-subtitle">貴社の規模とニーズに合わせて選べる、柔軟な会員体系。</p>
+            </div>
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="pricing-card">
+                    <h3>ベーシックプラン</h3>
+                    <div class="price">363<span>万円(税込)</span></div>
+                    <ul style="text-align: left; margin-top: 2rem; list-style: none; line-height: 2;">
+                        <li>✔ 無記名4名登録</li>
+                        <li>✔ ゲスト優待料金</li>
+                        <li>✔ 平日優先予約枠</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div style="background:var(--accent); color:#fff; position:absolute; top:0; left:0; width:100%; padding:0.3rem; font-weight:bold;">推奨プラン</div>
+                    <h3 style="margin-top:1rem;">プレミアムプラン</h3>
+                    <div class="price">679<span>万円(税込)</span></div>
+                    <p style="font-size:0.9rem; color:var(--accent);">★専用カート2台確保</p>
+                    <ul style="text-align: left; margin-top: 2rem; list-style: none; line-height: 2;">
+                        <li>✔ <strong>無記名4名登録</strong></li>
+                        <li>✔ <strong>土日祝 優先予約</strong></li>
+                        <li>✔ ゲスト特別優待</li>
+                        <li>✔ コンペ開催フルサポート</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="margin-top:2rem; width:100%;">詳細を問い合わせる</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>スーパープレミアム</h3>
+                    <div class="price">1,229<span>万円(税込)</span></div>
+                    <p style="font-size:0.9rem;">★Villa会員権・株式付帯</p>
+                    <ul style="text-align: left; margin-top: 2rem; list-style: none; line-height: 2;">
+                        <li>✔ 無記名4名登録</li>
+                        <li>✔ <strong>Villa宿泊権利付き</strong></li>
+                        <li>✔ 最優先予約対応</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>視察プレーのご案内</h2>
+            <p style="margin: 2rem 0; opacity: 0.9;">
+                百聞は一見に如かず。<br>
+                まずはメンバーフィで、TCCのクオリティをご体感ください。<br>
+                詳しい資料や、御社に合わせたプランのご提案も可能です。
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZHNVxxMbsyDUv1d7qXuAVaj0yfL5Hq1rk8ON_GxHbWtJMIA/viewform" target="_blank" class="btn btn-secondary" style="background: white; color: var(--primary);">
+                お問い合わせ・視察予約はこちら
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 2rem; opacity: 0.7;">
+                お電話でのお問い合わせ: 059-237-3580（担当：法人会員デスク）
+            </p>
+        </div>
+    </section>
+
+    <footer style="background: #0f1c11; color: #777; padding: 4rem 2rem; text-align: center; font-size: 0.9rem;">
+        <div class="container">
+            <img src="https://tsu.co.jp/wp-content/themes/tsucc/assets/img/common/logo_w.svg" alt="津カントリー倶楽部" style="width: 150px; margin-bottom: 2rem; opacity: 0.8;">
+            <p>〒514-0077 三重県津市片田長谷町30番地</p>
+            <p style="margin-top: 1rem;">© TSU COUNTRY CLUB All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
