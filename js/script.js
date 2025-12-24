@@ -32,19 +32,9 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// Contact form submission handler
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function () {
-        // Wait a moment for the form to submit to the iframe
-        setTimeout(function () {
-            // Hide the form
-            contactForm.style.display = 'none';
-            // Show success message
-            document.getElementById('form-success-message').style.display = 'block';
-        }, 500);
-    });
-}
+
+// Contact form uses pure HTML submission - no JavaScript needed
+
 
 
 // スクロール時のアニメーション

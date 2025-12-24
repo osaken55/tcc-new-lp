@@ -780,18 +780,9 @@
                     </small>
                 </p>
                 <div class="cta-form">
-                    <div id="form-success-message" style="display: none; text-align: center; padding: 3rem;">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
-                        <h3 style="color: var(--white); font-size: 1.8rem; margin-bottom: 1rem;">ありがとうございました</h3>
-                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.8;">
-                            お問い合わせを受け付けました。<br>
-                            48時間以内に担当者よりご連絡差し上げます。
-                        </p>
-                    </div>
-
-                    <form id="contact-form"
+                    <form
                         action="https://docs.google.com/forms/d/e/1FAIpQLScoEv5JC5dOBbfgAo6BngCZtZcJs37q8x4CLAdTbawVQgbUww/formResponse"
-                        method="POST" target="hidden-iframe" class="contact-form">
+                        method="POST" target="_self" class="contact-form">
 
                         <div class="form-group">
                             <label>会社名 <span class="required">*</span></label>
@@ -888,14 +879,12 @@
                             <textarea name="entry.1994116035" rows="5"></textarea>
                         </div>
 
-                        <button type="submit" class="submit-btn">この内容で送信する</button>
+                        <button type="submit" class="submit-btn">送信する</button>
 
                         <p class="form-note">
                             ※フォーム送信後、48時間以内に担当者よりご連絡いたします
                         </p>
                     </form>
-
-                    <iframe name="hidden-iframe" id="hidden-iframe" style="display:none;"></iframe>
                 </div>
             </div>
         </div>
