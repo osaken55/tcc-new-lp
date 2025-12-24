@@ -32,30 +32,11 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// フォーム送信
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
 
-    // 簡単なバリデーション
-    const requiredFields = this.querySelectorAll('[required]');
-    let isValid = true;
+// Contact form now submits directly to Google Forms
+// No JavaScript intervention needed
 
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            isValid = false;
-            field.style.borderColor = '#ff6b6b';
-        } else {
-            field.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-        }
-    });
 
-    if (isValid) {
-        alert('お問い合わせいただきありがとうございます。\n48時間以内に担当者よりご連絡いたします。');
-        this.reset();
-    } else {
-        alert('必須項目を入力してください。');
-    }
-});
 
 // スクロール時のアニメーション
 const observerOptions = {
