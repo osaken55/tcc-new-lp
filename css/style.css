@@ -939,19 +939,159 @@ html {
 .cta-form {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    padding: 2rem;
+    padding: 3rem 2rem;
     border-radius: 25px;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    overflow: hidden;
 }
 
-.cta-form iframe {
-    display: block;
-    margin: 0 auto;
-    border-radius: 15px;
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.required {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-group textarea {
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--white);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.radio-label:hover,
+.checkbox-label:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.radio-label input[type="radio"],
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, var(--accent), var(--accent-light));
+    color: var(--text-dark);
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+.form-note {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Responsive form styles */
+@media (max-width: 768px) {
+    .cta-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        gap: 0.6rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+}
+
 
 /* ===============================
    11. FOOTER
@@ -1138,7 +1278,9 @@ html {
     .section-header {
         margin-bottom: 3rem;
     }
-}/* ===============================
+}
+
+/* ===============================
    6.5 COMPARISON SECTION
    =============================== */
 .comparison-section {
@@ -1200,7 +1342,9 @@ html {
     color: #888;
     margin-top: 1rem;
     text-align: left;
-}/* ===============================
+}
+
+/* ===============================
    6.8 PARTNER SECTION
    =============================== */
 .partner-section {
@@ -1238,7 +1382,9 @@ html {
 
 .text-left {
     text-align: left !important;
-}/* ===============================
+}
+
+/* ===============================
    4.5 REASON SECTION
    =============================== */
 .reason-section {
@@ -1325,7 +1471,9 @@ html {
         flex: none;
         /* Don't grow, just fixed height */
     }
-}/* ===============================
+}
+
+/* ===============================
    5.5 ACCESS SECTION
    =============================== */
 .access-section {
@@ -1426,7 +1574,9 @@ html {
     .access-locations span {
         margin: 0 0.5rem;
     }
-}/* ===============================
+}
+
+/* ===============================
    4.8 FULL IMAGE SECTION
    =============================== */
 .full-image-section {
